@@ -5,6 +5,7 @@
       [opened]="!(isHandset$ | async)">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
+      <!--RouterLinks-->
       <a mat-list-item href="#">Link 1</a>
       <a mat-list-item href="#">Link 2</a>
       <a mat-list-item href="#">Link 3</a>
@@ -16,11 +17,15 @@
         type="button"
         aria-label="Toggle sidenav"
         mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
+        (click)="drawer.toggle()">
+        <!--Hiding the button when not in a mobile resolution-->
+        <!--*ngIf="isHandset$ | async"-->
+
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>material-design-project</span>
+      <span>Material Design Project</span>
+      <span class="toolbar-logout"></span>
+      <mat-icon>exit_to_app</mat-icon>
     </mat-toolbar>
     <!-- Add Content Here -->
     <ng-content></ng-content>
