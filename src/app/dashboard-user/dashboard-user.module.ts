@@ -1,19 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsUserComponent } from './components/forms-user/forms-user.component';
-import { TableUserComponent } from './components/table-user/table-user.component';
 import { ListUserComponent } from './containers/list-user/list-user.component';
+
+// Material
+import { TableUserComponent } from './components/table-user/table-user.component';
+import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
 
 @NgModule({
   declarations: [
     // Components
-    FormsUserComponent,
+    // Material
     TableUserComponent,
+    FormsUserComponent,
     // Containers
     ListUserComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class DashboardUserModule { }
