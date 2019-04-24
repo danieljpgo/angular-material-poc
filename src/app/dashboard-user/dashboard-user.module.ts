@@ -5,7 +5,7 @@ import { ListUserComponent } from './containers/list-user/list-user.component';
 
 // Material
 import { TableUserComponent } from './components/table-user/table-user.component';
-import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/material';
+import {MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,8 @@ import { MatTableModule, MatPaginatorModule, MatSortModule } from '@angular/mate
     CommonModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatIconModule
   ]
 })
 export class DashboardUserModule { }
