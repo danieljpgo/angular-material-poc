@@ -6,9 +6,18 @@
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <!--RouterLinks-->
-      <a mat-list-item href="#">Link 1</a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
+      <!--For if needs-->
+      <a
+        *ngFor="let item of nav"
+        mat-list-item
+        [routerLink]="item.link"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact : item.exact }">
+        {{ item.name }}
+      </a>
+      <!--<a mat-list-item href="#">Link 1</a>-->
+      <!--<a mat-list-item href="#">Link 2</a>-->
+      <!--<a mat-list-item href="#">Link 3</a>-->
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -26,6 +35,7 @@
       <span>Material Design Project</span>
       <span class="toolbar-logout"></span>
       <button
+        type="button"
         mat-icon-button>
         <mat-icon>exit_to_app</mat-icon>
       </button>
