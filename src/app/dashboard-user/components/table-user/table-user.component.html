@@ -1,14 +1,10 @@
+
 <div class="mat-elevation-z8">
   <table mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements">
-    <!-- Picture Column -->
-    <ng-container matColumnDef="picture">
-    <!--mat-sort-header-->
-    <!--@TODO Remove to no sort for this fild -->
-      <th mat-header-cell *matHeaderCellDef>Picture</th>
-      <td mat-cell *matCellDef="let row">
-      <!--{{row.picture}}-->
-        <mat-icon>face</mat-icon>
-      </td>
+    <!-- Id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
+      <td mat-cell *matCellDef="let row">{{row.id}}</td>
     </ng-container>
 
     <!-- Name Column -->
@@ -21,6 +17,15 @@
     <ng-container matColumnDef="email">
       <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
       <td mat-cell *matCellDef="let row">{{row.email}}</td>
+    </ng-container>
+
+    <!-- Button Edit -->
+    <!--@TODO Remove to no sort for this fild -->
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>Editar</th>
+      <td mat-cell *matCellDef="let row">
+        <button mat-raised-button (click)="editUser(row.id)">Edit</button>
+      </td>
     </ng-container>
 
     <!--Header of the table-->
