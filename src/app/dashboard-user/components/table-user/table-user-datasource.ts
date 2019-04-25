@@ -7,10 +7,10 @@ import { TableUserItem } from '../../models/table-items.interface';
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: TableUserItem[] = [
-  {picture: 'Foto 1', name: 'Valesca', email: 'valesca@gmail.com'},
-  {picture: 'Foto 2', name: 'Luiza', email: 'luiza@gmail.com'},
-  {picture: 'Foto 3', name: 'Vera', email: 'vera@gmail.com'},
-  {picture: 'Foto 4', name: 'Tulio', email: 'tulio@gmail.com'}
+  {id: 1, name: 'Valesca', email: 'valesca@gmail.com'},
+  {id: 2, name: 'Luiza', email: 'luiza@gmail.com'},
+  {id: 3, name: 'Vera', email: 'vera@gmail.com'},
+  {id: 4, name: 'Tulio', email: 'tulio@gmail.com'}
 ];
 
 /**
@@ -76,7 +76,7 @@ export class TableUserDataSource extends DataSource<TableUserItem> {
       switch (this.sort.active) {
         case 'name': return compare(a.name, b.name, isAsc);
         case 'email': return compare(+a.email, +b.email, isAsc);
-        case 'picture': return compare(+a.picture, +b.picture, isAsc);
+        case 'id': return compare(+a.id, +b.id, isAsc);
         default: return 0;
       }
     });

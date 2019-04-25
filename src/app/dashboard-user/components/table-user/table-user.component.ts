@@ -1,7 +1,9 @@
 // AfterViewInit
-import { OnInit, Component, ViewChild } from '@angular/core';
+import {OnInit, Component, ViewChild, Output, EventEmitter} from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
 import { TableUserDataSource } from './table-user-datasource';
+
+import { User } from '../../models/user.interface';
 
 @Component({
   selector: 'app-table-user',
@@ -15,15 +17,21 @@ export class TableUserComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   dataSource: TableUserDataSource;
 
+  @Output() view: EventEmitter<User> = new EventEmitter<User>();
+
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['picture', 'name', 'email'];
+  displayedColumns = ['id', 'name', 'email', 'edit'];
 
   ngOnInit() {
     this.dataSource = new TableUserDataSource(this.paginator, this.sort);
   }
-  
+
+  editUser(id) {
+    this.view.emit(id);
+  }
+
   // @TODO Verificar qual o melhor para se usar
   // ngAfterViewInit() {
   //   this.dataSource = new TableUserDataSource(this.paginator, this.sort);
-  //}
+  // }
 }
