@@ -25,13 +25,16 @@
       <td mat-cell *matCellDef="let row">{{row.departament}}</td>
     </ng-container>
 
-    <!-- Button Edit -->
+    <!-- Actions Column -->
     <!--@TODO Remove to no sort for this fild -->
-    <ng-container matColumnDef="edit">
-      <th mat-header-cell *matHeaderCellDef>Editar</th>
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let row">
         <button mat-icon-button (click)="editUser(row.id)">
           <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="editUser(row.id)">
+          <mat-icon>delete_outline</mat-icon>
         </button>
       </td>
     </ng-container>
