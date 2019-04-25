@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Daniel",
+      "email": "daniel@gmail.com",
+      "departament": "Programmer"
+    },
+    {
+      "id": "2",
+      "name": "Amanda Mel",
+      "email": "amanda@gmail.com",
+      "departament": "Administration"
+    },
+    {
+      "id": "3",
+      "name": "Valesca Luis",
+      "email": "valesca@gmail.com",
+      "departament": "Administration"
+    },
+    {
+      "id": "3",
+      "name": "Davi Golins",
+      "email": "davi@gmail.com",
+      "departament": "Programmer"
+    },
+    {
+      "id": "4",
+      "name": "Maria Mel",
+      "email": "maria@gmail.com",
+      "departament": "Programmer"
+    }
+  ]
+}
