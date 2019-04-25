@@ -1,14 +1,9 @@
 import { DataSource } from '@angular/cdk/collections';
 import { MatPaginator, MatSort } from '@angular/material';
 import { map } from 'rxjs/operators';
-import { Observable, of as observableOf, merge } from 'rxjs';
+import { Observable, of as observableOf, merge, from } from 'rxjs';
 
-// TODO: Replace this with your own data model type
-export interface TableUserItem {
-  picture: string;
-  name: string;
-  email: string;
-}
+import { TableUserItem } from '../../models/table-items.interface';
 
 // TODO: replace this with real data from your application
 const EXAMPLE_DATA: TableUserItem[] = [

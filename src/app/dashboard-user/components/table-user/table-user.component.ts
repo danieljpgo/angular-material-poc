@@ -21,8 +21,9 @@ export class TableUserComponent implements OnInit {
   ngOnInit() {
     this.dataSource = new TableUserDataSource(this.paginator, this.sort);
   }
+  
   // @TODO Verificar qual o melhor para se usar
   // ngAfterViewInit() {
   //   this.dataSource = new TableUserDataSource(this.paginator, this.sort);
-  // }
+  //}
 }
