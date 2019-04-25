@@ -20,7 +20,7 @@ export class TableUserComponent implements OnInit {
   @Output() view: EventEmitter<User> = new EventEmitter<User>();
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'name', 'email', 'departament', 'edit'];
+  displayedColumns = ['id', 'name', 'email', 'departament', 'actions'];
 
   ngOnInit() {
     this.dataSource = new TableUserDataSource(this.paginator, this.sort);
