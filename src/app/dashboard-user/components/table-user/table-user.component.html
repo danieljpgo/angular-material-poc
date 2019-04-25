@@ -19,12 +19,20 @@
       <td mat-cell *matCellDef="let row">{{row.email}}</td>
     </ng-container>
 
+    <!-- Departament Column -->
+    <ng-container matColumnDef="departament">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Departament</th>
+      <td mat-cell *matCellDef="let row">{{row.departament}}</td>
+    </ng-container>
+
     <!-- Button Edit -->
     <!--@TODO Remove to no sort for this fild -->
     <ng-container matColumnDef="edit">
       <th mat-header-cell *matHeaderCellDef>Editar</th>
       <td mat-cell *matCellDef="let row">
-        <button mat-raised-button (click)="editUser(row.id)">Edit</button>
+        <button mat-icon-button (click)="editUser(row.id)">
+          <mat-icon>edit</mat-icon>
+        </button>
       </td>
     </ng-container>
 

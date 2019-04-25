@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+
+// Components
 import { FormsUserComponent } from './components/forms-user/forms-user.component';
+import { TableUserComponent } from './components/table-user/table-user.component';
+
+// Containers
 import { ListUserComponent } from './containers/list-user/list-user.component';
 import { ViewerUserComponent } from './containers/viewer-user/viewer-user.component';
 
+// Service
+import { DashboardUserService } from './dashboard-user.service';
 
 // Material
-import { TableUserComponent } from './components/table-user/table-user.component';
-import {MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule, MatButtonModule} from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule, MatButtonModule} from '@angular/material';
+
 
 @NgModule({
   declarations: [
     // Components
-    // Material
     TableUserComponent,
     FormsUserComponent,
     // Containers
@@ -21,11 +28,16 @@ import {MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule, MatBut
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
+    // Material
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
     MatButtonModule
+  ],
+  providers: [
+    DashboardUserService
   ]
 })
 export class DashboardUserModule { }
