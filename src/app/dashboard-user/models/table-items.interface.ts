@@ -3,5 +3,4 @@ export interface TableUserItem {
   name: string;
   email: string;
   departament: string;
-
 }
