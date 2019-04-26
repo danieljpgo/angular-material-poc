@@ -31,7 +31,7 @@ export class TableUserComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     this.dataSource = new TableUserDataSource(this.userService);
-    this.dataSource.loadLessons('', 'asc', 1, 3);
+    this.dataSource.loadLessons('', 'asc', 0, 5);
   }
 
   ngAfterViewInit() {
@@ -40,7 +40,7 @@ export class TableUserComponent implements OnInit, AfterViewInit {
       .pipe(tap(() => this.loadLessonsPage()))
       .subscribe();
 
-    this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 1);
+    this.sort.sortChange.subscribe(() => this.paginator.pageIndex = 0);
 
     merge(this.sort.sortChange, this.paginator.page)
       .pipe(tap(() => this.loadLessonsPage()))

@@ -26,7 +26,7 @@ export class DashboardUserService {
         // .set('id', id.toString())
         .set('_sort', sort)
         .set('_order', order)
-        .set('_page', page.toString())
+        .set('_page', (page + 1).toString())
         .set('_limit', limit.toString())})
       .pipe(map((response: User[]) => response))
       .pipe(catchError(this.handleError));
