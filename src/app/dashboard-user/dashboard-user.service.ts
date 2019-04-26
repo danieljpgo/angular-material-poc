@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable, throwError} from 'rxjs';
 import {map, catchError} from 'rxjs/operators';
 
@@ -20,8 +20,14 @@ export class DashboardUserService {
       .pipe(catchError(this.handleError));
   }
 
-  getUsers(): Observable<User[]> {
-    return this.http.get(`${apiUrl}/users`)
+  getUsers(sort, order, page, limit): Observable<User[]> {
+    return this.http.get(`${apiUrl}/users`, {
+      params: new HttpParams()
+        // .set('id', id.toString())
+        .set('_sort', sort)
+        .set('_order', order)
+        .set('_page', page.toString())
+        .set('_limit', limit.toString())})
       .pipe(map((response: User[]) => response))
       .pipe(catchError(this.handleError));
   }

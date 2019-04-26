@@ -14,7 +14,7 @@ import { ViewerUserComponent } from './containers/viewer-user/viewer-user.compon
 import { DashboardUserService } from './dashboard-user.service';
 
 // Material
-import { MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule, MatButtonModule} from '@angular/material';
+import { MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule, MatButtonModule, MatProgressSpinnerModule} from '@angular/material';
 
 
 @NgModule({
@@ -34,7 +34,8 @@ import { MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule, MatBu
     MatPaginatorModule,
     MatSortModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     DashboardUserService

@@ -29,6 +29,36 @@
       "name": "Maria Mel",
       "email": "maria@gmail.com",
       "departament": "Programmer"
+    },
+    {
+      "id": "6",
+      "name": "Wanderson Trapson",
+      "email": "wanderson@gmail.com",
+      "departament": "Gamer"
+    },
+    {
+      "id": "7",
+      "name": "Ana Luiza",
+      "email": "ana@gmail.com",
+      "departament": "Administration"
+    },
+    {
+      "id": "8",
+      "name": "Val Lis",
+      "email": "val@gmail.com",
+      "departament": "Administration"
+    },
+    {
+      "id": "9",
+      "name": "Wesley Golins",
+      "email": "davi@gmail.com",
+      "departament": "Programmer"
+    },
+    {
+      "id": "10",
+      "name": "Bruna Melhor",
+      "email": "bruna@gmail.com",
+      "departament": "Programmer"
     }
   ]
 }
