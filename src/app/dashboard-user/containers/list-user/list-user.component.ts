@@ -17,18 +17,18 @@ export class ListUserComponent implements OnInit {
   constructor(private router: Router, private usersService: DashboardUserService) { }
 
   ngOnInit() {
-    this.handleGetUsers();
+    // this.handleGetUsers();
   }
 
   handleView(id) {
     this.router.navigate(['/users', id]);
   }
 
-  handleGetUsers() {
-    this.usersService.getUsers().subscribe((data: User[]) => {
-      console.log(data);
-      return this.users = data;
-    });
-  }
+  // handleGetUsers() {
+  //   // this.usersService.getUsers().subscribe((data: User[]) => {
+  //   //   console.log(data);
+  //   //   return this.users = data;
+  //   // });
+  // }
 
 }
