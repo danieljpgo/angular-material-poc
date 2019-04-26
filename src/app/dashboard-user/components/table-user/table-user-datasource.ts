@@ -65,10 +65,10 @@ export class TableUserDataSource extends DataSource<TableUserItem> {
     this.loadingSubject.complete();
   }
 
-  loadLessons(sort, order, page, limit) {
+  loadLessons(filter, sort, order, page, limit) {
     this.loadingSubject.next(true);
 
-    this.userService.getUsers(sort, order, page, limit)
+    this.userService.getUsers(filter, sort, order, page, limit)
       .pipe(catchError(() => of([])),
       finalize(() => this.loadingSubject.next(false)))
       .subscribe(lessons => this.lessonsSubject.next(lessons));
