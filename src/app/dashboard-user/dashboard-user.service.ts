@@ -20,10 +20,10 @@ export class DashboardUserService {
       .pipe(catchError(this.handleError));
   }
 
-  getUsers(sort, order, page, limit): Observable<User[]> {
+  getUsers(filter, sort, order, page, limit): Observable<User[]> {
     return this.http.get(`${apiUrl}/users`, {
       params: new HttpParams()
-        // .set('id', id.toString())
+        .set('q', filter.toString())
         .set('_sort', sort)
         .set('_order', order)
         .set('_page', (page + 1).toString())
