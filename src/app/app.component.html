@@ -1,9 +1,6 @@
-<app-main-nav>
+<app-main-nav [ngClass]="{'dark-theme': darkTheme, 'light-theme' : !darkTheme}">
+  <button mat-raised-button (click)="darkTheme = !darkTheme">Color</button>
   <div class="view-content">
     <router-outlet></router-outlet>
   </div>
 </app-main-nav>
-
-
-
-

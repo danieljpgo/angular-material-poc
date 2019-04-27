@@ -18,6 +18,8 @@ export class MainNavComponent {
 
   constructor(private breakpointObserver: BreakpointObserver) {}
 
+  darkTheme = false;
+
   nav: Nav[] = [
     {
       link: '/dashboard',
