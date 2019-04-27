@@ -1,61 +1,43 @@
-
+<!--<button mat-icon-button (click)="editUser(row.id)">-->
+<!--  <mat-icon>delete_outline</mat-icon>-->
+<!--</button>-->
 
 <!--  <div class="spinner-container" *ngIf="dataSource.loading$ | async">-->
 <!--    <mat-spinner></mat-spinner>-->
 <!--  </div>-->
 
-<div class="table-box">
-  <mat-card>
-    <mat-card-title>
-      Usuarios
-    </mat-card-title>
-    <mat-card-content>
 
-      <div class="table-inputs">
-        <!-- Search Input -->
-        <div>
-            <mat-form-field>
-                <input matInput placeholder="Search user" #inputSearch>
-              </mat-form-field>      
-        </div>
-       
-        <div>
-            <button mat-raised-button >
-                <mat-icon>add</mat-icon>
-            </button>
-        </div>
-    
+<div class=table-box>
+  <mat-form-field>
+    <input matInput placeholder="Search user" #inputSearch>
+  </mat-form-field>
 
-        
-      </div>
-  
+  <button mat-raised-button>
+    <mat-icon>add</mat-icon>
+  </button>
+  <!-- Table -->
   <div class="mat-elevation-z8">
-  
     <table mat-table class="full-width-table" [dataSource]="dataSource" matSort aria-label="Elements">
       <!-- Id Column -->
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
         <td mat-cell *matCellDef="let row">{{row.id}}</td>
       </ng-container>
-  
       <!-- Name Column -->
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
         <td mat-cell *matCellDef="let row">{{row.name}}</td>
       </ng-container>
-  
       <!-- Email Column -->
       <ng-container matColumnDef="email">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
         <td mat-cell *matCellDef="let row">{{row.email}}</td>
       </ng-container>
-  
       <!-- Departament Column -->
       <ng-container matColumnDef="departament">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Departament</th>
         <td mat-cell *matCellDef="let row">{{row.departament}}</td>
       </ng-container>
-  
       <!-- Actions Column -->
       <!--@TODO Remove to no sort for this fild -->
       <ng-container matColumnDef="actions">
@@ -64,26 +46,32 @@
           <button mat-icon-button (click)="editUser(row.id)">
             <mat-icon>edit</mat-icon>
           </button>
-          <button mat-icon-button (click)="editUser(row.id)">
-            <mat-icon>delete_outline</mat-icon>
-          </button>
         </td>
       </ng-container>
-  
       <!--Header of the table-->
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-  
-  <!--  @TODO length est'a chumbado-->
-  <!--  [pageIndex]="0"-->
+    <!--  @TODO length est'a chumbado-->
+    <!--  [pageIndex]="0"-->
     <mat-paginator #paginator
-        [length]="10"
-        [pageSize]="5"
-        [pageSizeOptions]="[1, 5, 10, 25]">
+                   [length]="10"
+                   [pageSize]="5"
+                   [pageSizeOptions]="[1, 5, 10, 25]">
     </mat-paginator>
-  </div> 
-
-    </mat-card-content>
-  </mat-card>
+  </div>
 </div>
+
+<button mat-raised-button>
+  <mat-icon>person_add</mat-icon>
+</button>
+<button mat-raised-button color="primary">
+  <mat-icon>done</mat-icon>
+</button>
+<button mat-raised-button color="accent">
+  <mat-icon>priority_high</mat-icon>
+</button>
+<button mat-raised-button color="warn">
+  <mat-icon>close</mat-icon>
+</button>
+
