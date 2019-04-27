@@ -68,6 +68,11 @@ export class TableUserComponent implements OnInit, AfterViewInit {
     );
   }
 
+  clearInput() {
+    this.inputSearch.nativeElement.value = '';
+    this.loadUserTable();
+  }
+
   editUser(id) {
     this.view.emit(id);
   }
