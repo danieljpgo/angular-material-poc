@@ -6,15 +6,14 @@
 <!--    <mat-spinner></mat-spinner>-->
 <!--  </div>-->
 
-<!--    <button mat-button *ngIf="inputSearch.nativeElement.value" matSuffix mat-icon-button aria-label="Clear" (click)="inputSearch.nativeElement.value =''">-->
-<!--      <mat-icon>close</mat-icon>-->
-<!--    </button>-->
-
 
 <div class=table-box>
   <div class="table-inputs">
       <mat-form-field>
         <input matInput placeholder="Search User" #search>
+        <button mat-button *ngIf="inputSearch.nativeElement.value" matSuffix mat-icon-button aria-label="Clear" (click)="clearInput()">
+          <mat-icon>close</mat-icon>
+        </button>
       </mat-form-field>
       <button mat-raised-button>
         <mat-icon>person_add</mat-icon>
