@@ -15,7 +15,7 @@ import { DashboardUserService } from './dashboard-user.service';
 
 // Material
 import { MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule, MatButtonModule,
-         MatProgressSpinnerModule, MatInputModule } from '@angular/material';
+         MatProgressSpinnerModule, MatInputModule, MatCardModule } from '@angular/material';
 
 
 @NgModule({
@@ -37,7 +37,8 @@ import { MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule, MatBu
     MatIconModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ],
   providers: [
     DashboardUserService
