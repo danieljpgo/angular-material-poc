@@ -34,7 +34,7 @@
       </button>
       <span>Material Design Project</span>
       <span class="toolbar-logout"></span>
-      <mat-slide-toggle #toggleTheme></mat-slide-toggle>
+      <mat-slide-toggle (change)="handleTheme($event)" #toggleTheme></mat-slide-toggle>
       <button
         type="button"
         mat-icon-button>

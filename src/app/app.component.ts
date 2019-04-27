@@ -6,5 +6,10 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  darkTheme = false;
+
+  selectTheme: boolean;
+
+  handleSelectTheme(event) {
+    this.selectTheme = event;
+  }
 }

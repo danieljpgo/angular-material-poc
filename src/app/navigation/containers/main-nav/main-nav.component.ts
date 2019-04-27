@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -16,9 +16,9 @@ export class MainNavComponent {
       map(result => result.matches)
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  @Output() selectTheme: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  darkTheme = false;
+  constructor(private breakpointObserver: BreakpointObserver) {}
 
   nav: Nav[] = [
     {
@@ -32,5 +32,9 @@ export class MainNavComponent {
       exact: true
     }
   ];
+
+  handleTheme(event) {
+    this.selectTheme.emit(event.checked);
+  }
 
 }

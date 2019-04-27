@@ -7,14 +7,14 @@ $custom-app-primary: mat-palette($mat-blue, A700);
 $custom-app-accent: mat-palette($mat-green, 600);
 $custom-app-warn: mat-palette($mat-red, A200);
 $custom-app-theme: mat-light-theme($custom-app-primary, $custom-app-accent, $custom-app-warn);
-.light-theme{
-  @include angular-material-theme($custom-app-theme);
-}
+//.light-theme{
+@include angular-material-theme($custom-app-theme);
+//}
 
 // Dark Theme
 $custom-app-dark-primary: mat-palette($mat-gray, A700);
-$custom-app-dark-accent:  mat-palette($mat-yellow);
-$custom-app-dark-warn:    mat-palette($mat-red, 700);
+$custom-app-dark-accent: mat-palette($mat-yellow);
+$custom-app-dark-warn: mat-palette($mat-red, 700);
 $custom-app-dark-theme: mat-dark-theme($custom-app-dark-primary, $custom-app-dark-accent, $custom-app-dark-warn);
 .dark-theme{
   @include angular-material-theme($custom-app-dark-theme);
