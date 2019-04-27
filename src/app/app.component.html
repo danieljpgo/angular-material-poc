@@ -1,5 +1,4 @@
-<app-main-nav [ngClass]="{'dark-theme': darkTheme, 'light-theme' : !darkTheme}">
-  <button mat-raised-button (click)="darkTheme = !darkTheme">Color</button>
+<app-main-nav (selectTheme)="handleSelectTheme($event)" [ngClass]="{'dark-theme': selectTheme}">
   <div class="view-content">
     <router-outlet></router-outlet>
   </div>

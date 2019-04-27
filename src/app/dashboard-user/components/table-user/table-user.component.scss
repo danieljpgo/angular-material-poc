@@ -1,14 +1,16 @@
-
-//.table-box .table-inputs{
-//  display: flex;
-//  flex-wrap: nowrap;
-//  justify-content: space-between
-//}
-/*mat-form-field{*/
-/*  width: calc(100% - 200px)*/
-/*}*/
-
 .table-box{
+  .table-inputs{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    mat-form-field{
+      width: 100%;
+    }
+    button{
+      margin-left: 20px;
+    }
+  }
+
   .mat-elevation-z8{
     padding: 0 20px;
     .full-width-table {

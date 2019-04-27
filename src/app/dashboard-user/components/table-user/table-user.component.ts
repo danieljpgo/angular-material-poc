@@ -23,7 +23,7 @@ export class TableUserComponent implements OnInit, AfterViewInit {
   /** Paginator  */
   @ViewChild(MatPaginator) paginator: MatPaginator;
   /** Search Input  */
-  @ViewChild('inputSearch') inputSearch: ElementRef;
+  @ViewChild('search') inputSearch: ElementRef;
   /** Table Data Source */
   dataSource: TableUserDataSource;
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
