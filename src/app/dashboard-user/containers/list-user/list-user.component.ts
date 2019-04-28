@@ -58,7 +58,7 @@ export class ListUserComponent implements OnInit {
     });
   }
 
-  handleDeletUser(user: User) {
+  handleDeleteUser(user: User) {
     this.dialogConfig.autoFocus = true;
     this.dialogConfig.data = {
       title: 'Delet User', content: 'Do you really want to delete this user?'

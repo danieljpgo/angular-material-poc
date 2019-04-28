@@ -82,7 +82,7 @@ export class TableUserComponent implements OnInit, AfterViewInit {
     this.edit.emit(user);
   }
 
-  handleDeletUser(user) {
+  handleDeleteUser(user) {
     this.delete.emit(user);
   }
 
