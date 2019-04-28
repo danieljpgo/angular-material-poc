@@ -1,11 +1,11 @@
 {
   "users": [
     {
-      "id": "01",
+      "id": 1,
       "firstName": "Daniel",
-      "lastName": "Gonzaga",
-      "email": "daniel@gmail.com",
-      "departament": "Programmer"
+      "lastName": "Jorge",
+      "email": "daniel@enacom.com.br",
+      "departament": "Administration"
     }
   ]
 }

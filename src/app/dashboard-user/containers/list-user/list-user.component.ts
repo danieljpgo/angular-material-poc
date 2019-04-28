@@ -3,6 +3,10 @@ import { Router } from '@angular/router';
 import { MatDialog, MatDialogConfig } from '@angular/material';
 
 import { FormsUserComponent } from '../../components/forms-user/forms-user.component';
+import { DashboardUserService } from '../../dashboard-user.service';
+
+// Interface
+import {User} from '../../models/user.interface';
 
 @Component({
   selector: 'app-list-user',
@@ -12,7 +16,7 @@ import { FormsUserComponent } from '../../components/forms-user/forms-user.compo
 export class ListUserComponent implements OnInit {
   dialogConfig: MatDialogConfig = new MatDialogConfig();
 
-  constructor(private router: Router, private dialog: MatDialog) { }
+  constructor(private router: Router, private dialog: MatDialog, private userService: DashboardUserService) { }
 
   ngOnInit() {  }
 
@@ -22,9 +26,16 @@ export class ListUserComponent implements OnInit {
     this.dialogConfig.data = {
       title: 'Edit User', userData: user, titleBtn: 'Done'
     };
+    console.log(user)
     const dialogRef = this.dialog.open(FormsUserComponent, this.dialogConfig);
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
+    dialogRef.afterClosed().subscribe((result: User) => {
+      if (result) {
+        this.userService.updateUser(result).subscribe((data) => {
+          console.log(data);
+        }, (error) => {
+          console.log(error);
+        });
+      }
     });
   }
 
@@ -35,8 +46,14 @@ export class ListUserComponent implements OnInit {
       title: 'Create User', userData: null, titleBtn: 'Create'
     };
     const dialogRef = this.dialog.open(FormsUserComponent, this.dialogConfig);
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(result);
+    dialogRef.afterClosed().subscribe((result: User) => {
+      if (result) {
+        this.userService.createUser(result).subscribe((data) => {
+          console.log(data);
+        }, (error) => {
+          console.log(error);
+        });
+      }
     });
   }
 }

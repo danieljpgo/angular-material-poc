@@ -2,8 +2,6 @@ import {Component, Inject, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
-// Interfaces
-import { Departament } from '../../models/departament.interface';
 
 @Component({
   selector: 'app-forms-user',
@@ -14,26 +12,14 @@ export class FormsUserComponent implements OnInit {
 
   userForm: FormGroup;
 
-  departament: Departament[] = [{
-    key: 'programmer',
-    value: 'Programmer'
-  }, {
-    key: 'administration',
-    value: 'Administration'
-  }, {
-    key: 'accounting',
-    value: 'Accounting'
-  }];
+  departament: string[] = ['Programmer', 'Administration', 'Accounting'];
 
-  // @TODO Trocar esse any
   constructor(private formBuilder: FormBuilder, public dialogRef: MatDialogRef<FormsUserComponent>,
               @Inject(MAT_DIALOG_DATA) public userData: any) { }
 
   ngOnInit() {
     this.userForm = this.formBuilder.group({
-      id: ['', [
-        Validators.required
-      ]],
+      id: [],
       firstName: ['', [
         Validators.required
       ]],
@@ -48,8 +34,6 @@ export class FormsUserComponent implements OnInit {
         Validators.required
       ]]
     });
-    console.log(this.userForm);
-    console.log(this.userData);
     if (this.userData.userData) {
       this.userForm.setValue(this.userData.userData);
     }
@@ -65,13 +49,9 @@ export class FormsUserComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  getIdErrorMessage(): string {
-    return this.userForm.get('id').hasError('required') ? 'Id is required.' : '';
-  }
-
   getNameErrorMessage(valid: boolean): string {
     return valid ? this.userForm.get('firstName').hasError('required') ? 'First name is required.' : '' :
-      this.userForm.get('lastName').hasError('required') ? 'Last name is required.' : '';
+                   this.userForm.get('lastName').hasError('required') ? 'Last name is required.' : '';
   }
 
   getEmailErrorMessage(): string {
