@@ -13,6 +13,76 @@
       "lastName": "Silva",
       "email": "silva@enacom.com.br",
       "departament": "Administration"
+    },
+    {
+      "id": 3,
+      "firstName": "Luiza",
+      "lastName": "Arer",
+      "email": "luiza@gmail.com",
+      "departament": "Administration"
+    },
+    {
+      "id": 4,
+      "firstName": "Teste",
+      "lastName": "Teste 2",
+      "email": "teste@enacom.com",
+      "departament": "Programmer"
+    },
+    {
+      "id": 5,
+      "firstName": "Gonzaga",
+      "lastName": "Galo",
+      "email": "gonzaga@enacom.com.br",
+      "departament": "Programmer"
+    },
+    {
+      "id": 6,
+      "firstName": "Valesca",
+      "lastName": "Silva",
+      "email": "silva@enacom.com.br",
+      "departament": "Administration"
+    },
+    {
+      "id": 7,
+      "firstName": "Larissa",
+      "lastName": "Silva",
+      "email": "larissa@gmail.com",
+      "departament": "Administration"
+    },
+    {
+      "id": 8,
+      "firstName": "Victor",
+      "lastName": "Doom",
+      "email": "doom@enacom.com",
+      "departament": "Programmer"
+    },
+    {
+      "id": 9,
+      "firstName": "Quasimoto",
+      "lastName": "Doom",
+      "email": "quasimoto@gmail.com",
+      "departament": "Accounting"
+    },
+    {
+      "id": 10,
+      "firstName": "Teste",
+      "lastName": "Name ",
+      "email": "teste@enacom.com",
+      "departament": "Programmer"
+    },
+    {
+      "id": 11,
+      "firstName": "Felix",
+      "lastName": "Doom",
+      "email": "felix@gmail.com",
+      "departament": "Accounting"
+    },
+    {
+      "id": 12,
+      "firstName": "Vera",
+      "lastName": "Lucia",
+      "email": "lucia@gmail.com",
+      "departament": "Accounting"
     }
   ]
 }

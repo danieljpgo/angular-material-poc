@@ -22,7 +22,6 @@ export class ListUserComponent implements OnInit {
   ngOnInit() {  }
 
   handleEdit(user: User) {
-    console.log(user);
     this.dialogConfig.disableClose = true;
     this.dialogConfig.autoFocus = true;
     this.dialogConfig.data = {
