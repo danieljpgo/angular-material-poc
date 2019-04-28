@@ -32,6 +32,12 @@ export class DashboardUserService {
       .pipe(catchError(this.handleError));
   }
 
+  createUser(user: User): Observable<User> {
+    return this.http.post(`${apiUrl}/users`, user)
+      .pipe(map((reponse: User) => reponse))
+      .pipe(catchError(this.handleError));
+  }
+
   updateUser(user: User): Observable<User> {
     const htttpOptions = {
       headers: new HttpHeaders({
