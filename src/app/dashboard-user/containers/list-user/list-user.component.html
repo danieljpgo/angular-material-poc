@@ -1,7 +1,14 @@
-<div>
-  <app-table-user
-    (edit)="handleEdit($event)"
-    (create)="handleCreate()"
-    (delete)="handleDeleteUser($event)">
-  </app-table-user>
+<div class="box-list-user">
+  <div>
+    Users
+  </div>
+  <mat-card>
+    <mat-card-content>
+      <app-table-user
+        (edit)="handleEdit($event)"
+        (create)="handleCreate()"
+        (delete)="handleDeleteUser($event)">
+      </app-table-user>
+    </mat-card-content>
+  </mat-card>
 </div>

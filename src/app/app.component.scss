@@ -2,4 +2,7 @@
 
 .view-content{
   padding: 20px 40px;
+  @media (max-width: 799px) {
+    padding: 20px 18px;
+  }
 }

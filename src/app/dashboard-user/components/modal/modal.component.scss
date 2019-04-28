@@ -2,7 +2,7 @@
   div:first-child {
     padding: 0 0 10px 0;
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 400;
   }
   div:nth-child(2) {
     padding: 20px 0;
@@ -11,5 +11,8 @@
     display: flex;
     justify-content: space-around;
     padding: 10px 0 0 0;
+    button{
+      width: 90px;
+    }
   }
 }

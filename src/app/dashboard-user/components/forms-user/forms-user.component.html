@@ -2,15 +2,13 @@
   <div>
     {{userData.title}}
   </div>
-  <div>
+  <div class="form-name-inputs">
     <mat-form-field>
       <input type="text" matInput placeholder="First Name" formControlName="firstName">
       <mat-error *ngIf="userForm.get('firstName').invalid">
         {{getNameErrorMessage(true)}}
       </mat-error>
     </mat-form-field>
-  </div>
-  <div>
     <mat-form-field>
       <input type="text" matInput placeholder="Last Name" formControlName="lastName">
       <mat-error *ngIf="userForm.get('lastName').invalid">
@@ -18,7 +16,7 @@
       </mat-error>
     </mat-form-field>
   </div>
-  <div>
+  <div class="form-email-input">
     <mat-form-field>
       <input type="text" matInput placeholder="Email" formControlName="email">
       <mat-hint>
