@@ -2,62 +2,9 @@
   "users": [
     {
       "id": "01",
-      "name": "Daniel",
+      "firstName": "Daniel",
+      "lastName": "Gonzaga",
       "email": "daniel@gmail.com",
-      "departament": "Programmer"
-    },
-    {
-      "id": "02",
-      "name": "Amanda Mel",
-      "email": "amanda@gmail.com",
-      "departament": "Administration"
-    },
-    {
-      "id": "03",
-      "name": "Valesca Luis",
-      "email": "valesca@gmail.com",
-      "departament": "Administration"
-    },
-    {
-      "id": "04",
-      "name": "Davi Golins",
-      "email": "davi@gmail.com",
-      "departament": "Programmer"
-    },
-    {
-      "id": "05",
-      "name": "Maria Mel",
-      "email": "maria@gmail.com",
-      "departament": "Programmer"
-    },
-    {
-      "id": "06",
-      "name": "Wanderson Trapson",
-      "email": "wanderson@gmail.com",
-      "departament": "Gamer"
-    },
-    {
-      "id": "07",
-      "name": "Ana Luiza",
-      "email": "ana@gmail.com",
-      "departament": "Administration"
-    },
-    {
-      "id": "08",
-      "name": "Val Lis",
-      "email": "val@gmail.com",
-      "departament": "Administration"
-    },
-    {
-      "id": "09",
-      "name": "Wesley Golins",
-      "email": "davi@gmail.com",
-      "departament": "Programmer"
-    },
-    {
-      "id": "10",
-      "name": "Bruna Melhor",
-      "email": "bruna@gmail.com",
       "departament": "Programmer"
     }
   ]

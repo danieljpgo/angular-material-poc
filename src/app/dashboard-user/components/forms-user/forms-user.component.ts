@@ -1,9 +1,9 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 // Interfaces
 import { Departament } from '../../models/departament.interface';
-import { User } from '../../models/user.interface';
 
 @Component({
   selector: 'app-forms-user',
@@ -11,9 +11,6 @@ import { User } from '../../models/user.interface';
   styleUrls: ['./forms-user.component.scss']
 })
 export class FormsUserComponent implements OnInit {
-
-  @Input() user: User;
-  @Output() update: EventEmitter<User> = new EventEmitter<User>();
 
   userForm: FormGroup;
 
@@ -28,11 +25,19 @@ export class FormsUserComponent implements OnInit {
     value: 'Accounting'
   }];
 
-  constructor(private formBuilder: FormBuilder) { }
+  // @TODO Trocar esse any
+  constructor(private formBuilder: FormBuilder, public dialogRef: MatDialogRef<FormsUserComponent>,
+              @Inject(MAT_DIALOG_DATA) public userData: any) { }
 
   ngOnInit() {
     this.userForm = this.formBuilder.group({
-      name: ['', [
+      id: ['', [
+        Validators.required
+      ]],
+      firstName: ['', [
+        Validators.required
+      ]],
+      lastName: ['', [
         Validators.required
       ]],
       email: ['', [
@@ -44,16 +49,29 @@ export class FormsUserComponent implements OnInit {
       ]]
     });
     console.log(this.userForm);
+    console.log(this.userData);
+    if (this.userData.userData) {
+      this.userForm.setValue(this.userData.userData);
+    }
   }
 
   handleSubmit() {
     if (this.userForm.valid) {
-      this.update.emit(this.userForm.value);
+      this.dialogRef.close(this.userForm.value);
     }
   }
 
-  getNameErrorMessage(): string {
-    return this.userForm.get('name').hasError('required') ? 'Name is required.' : '';
+  closeForm() {
+    this.dialogRef.close();
+  }
+
+  getIdErrorMessage(): string {
+    return this.userForm.get('id').hasError('required') ? 'Id is required.' : '';
+  }
+
+  getNameErrorMessage(valid: boolean): string {
+    return valid ? this.userForm.get('firstName').hasError('required') ? 'First name is required.' : '' :
+      this.userForm.get('lastName').hasError('required') ? 'Last name is required.' : '';
   }
 
   getEmailErrorMessage(): string {

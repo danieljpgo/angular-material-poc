@@ -4,16 +4,16 @@ import { Observable, BehaviorSubject, of } from 'rxjs';
 import { DashboardUserService } from '../../dashboard-user.service';
 
 // Interface
-import { TableUserItem } from '../../models/table-items.interface';
+import { User } from '../../models/user.interface';
 
 /**
  * Data source for the TableUser view. This class should
  * encapsulate all logic for fetching and manipulating the displayed data
  * (including sorting, pagination, and filtering).
  */
-export class TableUserDataSource extends DataSource<TableUserItem> {
+export class TableUserDataSource extends DataSource<User> {
 
-  private lessonsSubject = new BehaviorSubject<TableUserItem[]>([]);
+  private lessonsSubject = new BehaviorSubject<User[]>([]);
   private loadingSubject = new BehaviorSubject<boolean>(false);
 
   // @TODO Loading
@@ -28,7 +28,7 @@ export class TableUserDataSource extends DataSource<TableUserItem> {
    * the returned stream emits new items.
    * @returns A stream of the items to be rendered.
    */
-  connect(collectionViewer: CollectionViewer): Observable<TableUserItem[]> {
+  connect(collectionViewer: CollectionViewer): Observable<User[]> {
     return this.lessonsSubject.asObservable();
   }
 
