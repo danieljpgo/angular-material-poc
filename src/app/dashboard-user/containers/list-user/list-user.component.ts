@@ -4,6 +4,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 
 import { FormsUserComponent } from '../../components/forms-user/forms-user.component';
 import { DashboardUserService } from '../../dashboard-user.service';
+import {ModalComponent} from '../../components/modal/modal.component';
 
 // Interface
 import {User} from '../../models/user.interface';
@@ -20,15 +21,15 @@ export class ListUserComponent implements OnInit {
 
   ngOnInit() {  }
 
-  handleEdit(user) {
+  handleEdit(user: User) {
+    console.log(user);
     this.dialogConfig.disableClose = true;
     this.dialogConfig.autoFocus = true;
     this.dialogConfig.data = {
       title: 'Edit User', userData: user, titleBtn: 'Done'
     };
-    console.log(user)
-    const dialogRef = this.dialog.open(FormsUserComponent, this.dialogConfig);
-    dialogRef.afterClosed().subscribe((result: User) => {
+    const dialogRefEdit = this.dialog.open(FormsUserComponent, this.dialogConfig);
+    dialogRefEdit.afterClosed().subscribe((result: User) => {
       if (result) {
         this.userService.updateUser(result).subscribe((data) => {
           console.log(data);
@@ -39,20 +40,33 @@ export class ListUserComponent implements OnInit {
     });
   }
 
-  handleCreate(event) {
+  handleCreate() {
     this.dialogConfig.disableClose = true;
     this.dialogConfig.autoFocus = true;
     this.dialogConfig.data = {
       title: 'Create User', userData: null, titleBtn: 'Create'
     };
-    const dialogRef = this.dialog.open(FormsUserComponent, this.dialogConfig);
-    dialogRef.afterClosed().subscribe((result: User) => {
+    const dialogRefCreate = this.dialog.open(FormsUserComponent, this.dialogConfig);
+    dialogRefCreate.afterClosed().subscribe((result: User) => {
       if (result) {
         this.userService.createUser(result).subscribe((data) => {
           console.log(data);
         }, (error) => {
           console.log(error);
         });
+      }
+    });
+  }
+
+  handleDeletUser(user: User) {
+    this.dialogConfig.autoFocus = true;
+    this.dialogConfig.data = {
+      title: 'Delet User', content: 'Do you really want to delete this user?'
+    };
+    const dialogRefDelet = this.dialog.open(ModalComponent, this.dialogConfig);
+    dialogRefDelet.afterClosed().subscribe((result: boolean) => {
+      if (result) {
+        this.userService.deleteUser(user).subscribe();
       }
     });
   }
