@@ -16,7 +16,7 @@
         </button>
       </mat-form-field>
       <button mat-raised-button>
-        <mat-icon>person_add</mat-icon>
+        <mat-icon (click)="handleCreateUser($event)">person_add</mat-icon>
       </button>
   </div>
 
@@ -48,7 +48,7 @@
       <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let row">
-          <button mat-icon-button (click)="editUser(row.id)">
+          <button mat-icon-button (click)="handleEditUser(row)">
             <mat-icon>edit</mat-icon>
           </button>
         </td>

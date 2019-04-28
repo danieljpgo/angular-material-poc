@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Components
 import { FormsUserComponent } from './components/forms-user/forms-user.component';
@@ -8,14 +9,14 @@ import { TableUserComponent } from './components/table-user/table-user.component
 
 // Containers
 import { ListUserComponent } from './containers/list-user/list-user.component';
-import { ViewerUserComponent } from './containers/viewer-user/viewer-user.component';
 
 // Service
 import { DashboardUserService } from './dashboard-user.service';
 
 // Material
-import { MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule, MatButtonModule,
-         MatProgressSpinnerModule, MatInputModule, MatCardModule } from '@angular/material';
+import {
+  MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule, MatButtonModule,
+  MatProgressSpinnerModule, MatInputModule, MatDialogModule, MatSelectModule } from '@angular/material';
 
 
 @NgModule({
@@ -24,12 +25,12 @@ import { MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule, MatBu
     TableUserComponent,
     FormsUserComponent,
     // Containers
-    ListUserComponent,
-    ViewerUserComponent
+    ListUserComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
     // Material
     MatTableModule,
     MatPaginatorModule,
@@ -38,10 +39,14 @@ import { MatTableModule, MatPaginatorModule, MatSortModule, MatIconModule, MatBu
     MatButtonModule,
     MatProgressSpinnerModule,
     MatInputModule,
-    MatCardModule
+    MatDialogModule,
+    MatSelectModule,
   ],
   providers: [
     DashboardUserService
+  ],
+  entryComponents: [
+    FormsUserComponent
   ]
 })
 export class DashboardUserModule { }

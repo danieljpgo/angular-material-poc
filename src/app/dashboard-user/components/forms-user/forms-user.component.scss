@@ -1,0 +1,12 @@
+.full-width{
+  width: 100%;
+}
+.form-box{
+  div{
+    padding: 20px 0;
+  }
+  div:last-child{
+    justify-content: space-between;
+    display: flex;
+  }
+}

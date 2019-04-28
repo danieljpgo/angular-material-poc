@@ -1,12 +1,12 @@
 import { OnInit, AfterViewInit, Component, ViewChild, Output, EventEmitter, ElementRef } from '@angular/core';
 import { MatPaginator, MatSort } from '@angular/material';
-
+import { debounceTime, distinctUntilChanged, tap} from 'rxjs/operators';
+import { fromEvent, merge } from 'rxjs';
 import { TableUserDataSource } from './table-user-datasource';
 import { DashboardUserService } from '../../dashboard-user.service';
 
+// Interface
 import { User } from '../../models/user.interface';
-import { debounceTime, distinctUntilChanged, tap} from 'rxjs/operators';
-import { fromEvent, merge } from 'rxjs';
 
 @Component({
   selector: 'app-table-user',
@@ -16,8 +16,8 @@ import { fromEvent, merge } from 'rxjs';
 
 export class TableUserComponent implements OnInit, AfterViewInit {
 
-  @Output() view: EventEmitter<User> = new EventEmitter<User>();
-
+  @Output() edit: EventEmitter<User> = new EventEmitter<User>();
+  @Output() create: EventEmitter<any> = new EventEmitter();
   /** Sort  */
   @ViewChild(MatSort) sort: MatSort;
   /** Paginator  */
@@ -73,8 +73,12 @@ export class TableUserComponent implements OnInit, AfterViewInit {
     this.loadUserTable();
   }
 
-  editUser(id) {
-    this.view.emit(id);
+  handleEditUser(user) {
+    this.edit.emit(user);
+  }
+
+  handleCreateUser(event) {
+    this.create.emit(event);
   }
 
 }
