@@ -16,8 +16,9 @@ import { User } from '../../models/user.interface';
 
 export class TableUserComponent implements OnInit, AfterViewInit {
 
-  @Output() edit: EventEmitter<User> = new EventEmitter<User>();
   @Output() create: EventEmitter<any> = new EventEmitter();
+  @Output() edit: EventEmitter<User> = new EventEmitter<User>();
+  @Output() delete: EventEmitter<User> = new  EventEmitter<User>();
   /** Sort  */
   @ViewChild(MatSort) sort: MatSort;
   /** Paginator  */
@@ -73,12 +74,16 @@ export class TableUserComponent implements OnInit, AfterViewInit {
     this.loadUserTable();
   }
 
+  handleCreateUser() {
+    this.create.emit();
+  }
+
   handleEditUser(user) {
     this.edit.emit(user);
   }
 
-  handleCreateUser(event) {
-    this.create.emit(event);
+  handleDeletUser(user) {
+    this.delete.emit(user);
   }
 
 }

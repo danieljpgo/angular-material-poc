@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 // Components
 import { FormsUserComponent } from './components/forms-user/forms-user.component';
 import { TableUserComponent } from './components/table-user/table-user.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 // Containers
 import { ListUserComponent } from './containers/list-user/list-user.component';
@@ -25,7 +26,8 @@ import {
     TableUserComponent,
     FormsUserComponent,
     // Containers
-    ListUserComponent
+    ListUserComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,
@@ -46,7 +48,8 @@ import {
     DashboardUserService
   ],
   entryComponents: [
-    FormsUserComponent
+    FormsUserComponent,
+    ModalComponent
   ]
 })
 export class DashboardUserModule { }
