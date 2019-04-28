@@ -1,12 +1,29 @@
-.full-width{
-  width: 100%;
-}
 .form-box{
   div{
-    padding: 20px 0;
+    padding: 10px 0;
+  }
+  div:first-child{
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .form-name-inputs{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    mat-form-field:first-child{
+      padding-right: 20px;
+    }
+  }
+  .form-email-input{
+    mat-form-field{
+      width: 100%;
+    }
   }
   div:last-child{
-    justify-content: space-between;
+    justify-content: space-around;
     display: flex;
+    button{
+      width: 90px;
+    }
   }
 }
