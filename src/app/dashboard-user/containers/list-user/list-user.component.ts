@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MatDialog, MatDialogConfig } from '@angular/material';
+
+import { FormsUserComponent } from '../../components/forms-user/forms-user.component';
 
 @Component({
   selector: 'app-list-user',
@@ -7,11 +10,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./list-user.component.scss']
 })
 export class ListUserComponent implements OnInit {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private dialog: MatDialog) { }
 
   ngOnInit() {  }
 
-  handleView(id) {
-    this.router.navigate(['/users', id]);
+  handleEdit(id) {
+    console.log(id);
+    this.dialog.open(FormsUserComponent);
+  }
+
+  handleCreate(event) {
+    console.log(event);
+    this.dialog.open(FormsUserComponent);
   }
 }

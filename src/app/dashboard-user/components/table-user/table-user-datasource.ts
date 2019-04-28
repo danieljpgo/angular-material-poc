@@ -1,10 +1,10 @@
 import { DataSource, CollectionViewer } from '@angular/cdk/collections';
 import { catchError, finalize } from 'rxjs/operators';
 import { Observable, BehaviorSubject, of } from 'rxjs';
-
-import { TableUserItem } from '../../models/table-items.interface';
-
 import { DashboardUserService } from '../../dashboard-user.service';
+
+// Interface
+import { TableUserItem } from '../../models/table-items.interface';
 
 /**
  * Data source for the TableUser view. This class should
@@ -16,6 +16,7 @@ export class TableUserDataSource extends DataSource<TableUserItem> {
   private lessonsSubject = new BehaviorSubject<TableUserItem[]>([]);
   private loadingSubject = new BehaviorSubject<boolean>(false);
 
+  // @TODO Loading
   public loading$ = this.loadingSubject.asObservable();
 
   constructor(private userService: DashboardUserService) {
