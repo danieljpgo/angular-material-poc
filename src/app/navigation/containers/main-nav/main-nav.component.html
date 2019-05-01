@@ -5,16 +5,34 @@
       [opened]="!(isHandset$ | async)">
     <mat-toolbar>Logo</mat-toolbar>
     <mat-nav-list>
-      <!--RouterLinks-->
-      <!--For if needs-->
-      <a
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <a mat-list-item>List</a>
+            </mat-expansion-panel-header>
+            <a mat-list-item>x</a>
+            <a mat-list-item>y</a>
+            <a mat-list-item>z</a>
+          </mat-expansion-panel>
+          <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <a mat-list-item>List</a>
+              </mat-expansion-panel-header>
+              <a mat-list-item>x</a>
+              <a mat-list-item>y</a>
+              <a mat-list-item>z</a>
+          </mat-expansion-panel>     
+          <a mat-list-item>y</a>
+      
+
+      <!-- <a
         *ngFor="let item of nav"
         mat-list-item
         [routerLink]="item.link"
         routerLinkActive="active"
         [routerLinkActiveOptions]="{ exact : item.exact }">
         {{ item.name }}
-      </a>
+      </a> -->
+
       <!--<a mat-list-item href="#">Link 1</a>-->
       <!--<a mat-list-item href="#">Link 2</a>-->
       <!--<a mat-list-item href="#">Link 3</a>-->
