@@ -43,4 +43,15 @@
     <button type="submit"  mat-raised-button color="primary" [disabled]="userForm.invalid">{{userData.titleBtn}}</button>
     <button type="reset" mat-raised-button color="warn" (click)="closeForm()">Cancel</button>
   </div>
+  
 </form>
+<div style="width: 250px">
+  Values:
+  <div>
+    {{userForm.value | json}}    
+  </div>
+  Status: 
+  <div>
+    {{userForm.status}}
+  </div>
+</div>
