@@ -1,27 +1,90 @@
-# MaterialDesignProject
+<h1 align="center">
+<a href="https://material.angular.io/">
+  <img
+    alt="material"
+    title="material"
+    src=".github/material.svg"
+    height="150px" 
+    width="110px"
+    />
+</a>
+    <img
+    alt="angular"
+    title="angular"
+    src=".github/angular.png"
+    width="150px" />
+</h1>
+ 
+<h1> Angular Material - PoC </h1>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.8.
+<p align="left">
+   <a href="https://github.com/danieljpgo">
+      <img
+         alt="author"
+         src="https://img.shields.io/badge/author-danieljpgo-ffa726?style=flat-square"
+      />
+   </a>
+   <img
+      alt="languages"
+      src="https://img.shields.io/github/languages/count/danieljpgo/angular-material-poc?color=ffa726&style=flat-square"
+   />
+   <a href="https://github.com/danieljpgo/angular-material-poc/graphs/contributors">
+      <img
+         alt="contributors"
+         src="https://img.shields.io/github/contributors/danieljpgo/angular-material-poc?color=ffa726&style=flat-square"/>
+   </a>
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-ffa726?style=flat-square">
+</p>
 
-## Development server
+> Just a proof of concept of the Angular Material library. :clipboard:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+----
 
-## Code scaffolding
+<p align="center">
+   <a href="#memo-project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#pushpin-topics">Topics</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#man_technologist-technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#runner-getting-started">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+   <a href="#page_with_curl-license">License</a>
+</p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## :memo: Project
+Since I already worked with **Angular** at the time, I did a proof of concept to evaluate the use of the **Angular Material** library to accelerate the development of applications in the company.
 
-## Build
+## :pushpin: Topics
+The main topics of the project are:
+- Implementation of **navigation** components and page **layout**.
+- Complete **CRUD**, just using the library components.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## :man_technologist: Technologies
+The main technologies used to develop the project were:
+- [Angular](https://angular.io/)
+- [Angular Material](https://material.angular.io)
+- [Json Server](https://github.com/typicode/json-server)
+- [Typescript](https://www.typescriptlang.org/)
 
-## Running unit tests
+## :runner: Getting Started
+First, make sure you have **[Node](https://nodejs.org/en/)**, then clone the project with:
+```
+git clone https://github.com/danieljpgo/angular-material-poc.git
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+With  **[npm](https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/)**, install dependencies:
+```
+npm install
+```
+Run the [json server](https://github.com/typicode/json-server), for a fake REST API, execute:
+```
+npm run json-server
+```
+In order to **start** the application, execute:
+```
+ng serve
+```
 
-## Running end-to-end tests
+## :page_with_curl: License
+This project is under the [MIT license](https://github.com/danieljpgo/angular-material-poc/blob/master/LICENSE).
+<div>Released in 2019.</div>
+<div>README update in 2020.</div>
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Developed by [Daniel Jorge](https://github.com/danieljpgo)
